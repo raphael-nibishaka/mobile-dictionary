@@ -20,6 +20,7 @@ import { useColorScheme } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { AppStartupScreen } from '@/components/AppStartupScreen';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Colors } from '@/constants/theme';
 import { FavoritesProvider } from '@/context/FavoritesProvider';
@@ -70,7 +71,7 @@ export default function RootLayout() {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
-    return null;
+    return <AppStartupScreen />;
   }
 
   return (
