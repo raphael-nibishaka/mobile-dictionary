@@ -59,8 +59,9 @@ export function HistoryList({
         <Pressable
           key={`${item.word}-${item.searchedAt}`}
           onPress={() => onItemPress(item.word)}
-          className="flex-row items-center py-3.5 active:opacity-70"
-          style={{ borderBottomWidth: 1, borderBottomColor: colors.border }}>
+          className="flex-row items-center py-3.5 active:opacity-75"
+          style={{ transform: [{ scale: 0.995 }], borderBottomWidth: 1, borderBottomColor: colors.border }}
+          >
           <View
             className="w-9 h-9 rounded-full items-center justify-center mr-3"
             style={{ backgroundColor: `${colors.primary}15` }}>

@@ -83,20 +83,20 @@ function DefinitionItem({ definition, number, isLast, onWordPress }: DefinitionI
   const { colors } = useThemeColors();
 
   return (
-    <View className={`py-3 ${!isLast ? 'border-b' : ''}`} style={{ borderColor: colors.border }}>
+    <View className={`py-3.5 ${!isLast ? 'border-b' : ''}`} style={{ borderColor: colors.border }}>
       <View className="flex-row">
         <Text className="font-label text-sm mr-2 mt-0.5" style={{ color: colors.primary }}>
           {number}.
         </Text>
         <View className="flex-1">
-          <Text className="font-body text-base leading-6" style={{ color: colors.text }}>
+          <Text className="font-body text-base leading-7" style={{ color: colors.text }}>
             {definition.definition}
           </Text>
           {definition.example ? (
             <View
               className="mt-3 px-4 py-3 rounded-xl"
               style={{ backgroundColor: `${colors.primary}10` }}>
-              <Text className="font-body text-sm italic leading-5" style={{ color: colors.textSecondary }}>
+              <Text className="font-body text-sm italic leading-6" style={{ color: colors.textSecondary }}>
                 {`“${definition.example}”`}
               </Text>
             </View>

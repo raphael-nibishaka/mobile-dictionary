@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Pressable, Text, View } from 'react-native';
 
-import { BorderRadius, Gradients } from '@/constants/theme';
+import { BorderRadius, Gradients, Spacing } from '@/constants/theme';
 import { useThemeColors } from '@/hooks/useThemeColors';
 import { capitalizeWord } from '@/utils/helpers';
 
@@ -67,14 +67,14 @@ export function WordCard({
       variant === 'wordOfDay' ? Gradients.wordOfDay : Gradients.primary;
 
     return (
-      <Pressable onPress={onPress} className="active:opacity-90 flex-1">
+      <Pressable onPress={onPress} className="active:opacity-85 flex-1" style={{ transform: [{ scale: 0.995 }] }}>
         <LinearGradient
           colors={[...gradientColors]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={{
             borderRadius: BorderRadius.card,
-            padding: 20,
+            padding: Spacing.md + 2,
             minHeight: variant === 'wordOfDay' ? 160 : 120,
             shadowColor: colors.cardShadow,
             shadowOffset: { width: 0, height: 3 },
@@ -89,12 +89,12 @@ export function WordCard({
   }
 
   return (
-    <Pressable onPress={onPress} className="active:opacity-90 flex-1">
+    <Pressable onPress={onPress} className="active:opacity-85 flex-1" style={{ transform: [{ scale: 0.995 }] }}>
       <View
         style={{
           backgroundColor: isDark ? colors.surfaceSecondary : colors.surface,
           borderRadius: BorderRadius.card,
-          padding: 20,
+          padding: Spacing.md + 2,
           minHeight: 120,
           borderWidth: 1,
           borderColor: colors.border,

@@ -209,7 +209,7 @@ export function WordDetailsScreen({ word }: WordDetailsScreenProps) {
 
       {/* Content */}
       {isLoading ? (
-        <LoadingIndicator message="Fetching definition..." />
+        <LoadingIndicator message="Fetching definition..." variant="skeleton" skeletonRows={3} />
       ) : error ? (
         <ErrorState error={error} onRetry={handleRetry} />
       ) : result && result.meanings.length > 0 ? (

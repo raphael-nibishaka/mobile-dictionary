@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
 
-import { BorderRadius } from '@/constants/theme';
+import { BorderRadius, Spacing } from '@/constants/theme';
 import { useThemeColors } from '@/hooks/useThemeColors';
 
 interface SearchBarProps {
@@ -27,18 +27,19 @@ export function SearchBar({
   return (
     <View className="w-full">
       <View
-        className="flex-row items-center px-4"
+        className="flex-row items-center"
         style={{
           backgroundColor: colors.surface,
           borderRadius: BorderRadius.input,
           borderWidth: error ? 1.5 : 1,
           borderColor: error ? colors.error : colors.border,
-          minHeight: 56,
+          minHeight: 58,
+          paddingHorizontal: Spacing.md,
         }}>
         <Ionicons name="search" size={20} color={colors.textMuted} />
         <TextInput
           className="flex-1 font-body text-base px-3 py-3"
-          style={{ color: colors.text }}
+          style={{ color: colors.text, lineHeight: 22 }}
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}
@@ -55,12 +56,12 @@ export function SearchBar({
           <Pressable
             onPress={onSubmit}
             disabled={!value.trim()}
-            className="px-4 py-2 rounded-card active:opacity-80"
+            className="px-4 py-2.5 rounded-card active:opacity-80"
             style={{
               backgroundColor: value.trim() ? colors.primary : colors.border,
               borderRadius: BorderRadius.button,
             }}>
-            <Text className="font-label text-sm text-white font-medium">Search</Text>
+            <Text className="font-label text-sm text-white">Search</Text>
           </Pressable>
         )}
       </View>
